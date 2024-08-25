@@ -14,12 +14,16 @@ Table of Contents:
 
 1. A description of the Hangman game project
 
-        What it does: The traditional Hangman game is a classic game in which a player thinks of a word while his opponent tries to guess that word within a limited amount of attempts. 
+        - What it does: The traditional Hangman game is a classic game in which a player thinks of a word while his opponent tries to guess that word within a limited amount of attempts. 
 
-        The aim of the project: Within the fields of Data Science and Data Architechture, the handling of data packages under Git environments comes across as a popular solution to guarrantee the efficiency of data handling for front-end and back-end users. The aim of this project is to apply the concepts of Object Oriented Programming (OOP) and Advanced Python Programming to real a life scenario. In this case the projects proposes an implementation of the Hangman game, where the computer generates a word and the user tries to guess it.
+        - The aim of the project: Within the fields of Data Science and Data Architechture, the handling of data packages under Git environments comes across as a popular solution to guarrantee the efficiency of data handling for front-end and back-end users.
+        The aim of this project is to apply the concepts of Object Oriented Programming (OOP) and Advanced Python Programming to real a life scenario.
+        In this case the project uses de OPP paradigm to propose an implementation of the Hangman game, where the computer generates a word and the user tries to guess it.
 
-        Key points learned: The present project is developed under Git environment with Python.3. Different devoloppers may collaborate via GitHub.
-        The local Git commands greatly minimise human errors and allow a more efficient developement of features as new branches may be implemented for each features. Reverting to a previous update is made possible by the .git file that traces all commits or versions.
+        - Key points learned: The present project is developed under Git environment with Python.3. Different devoloppers may collaborate via GitHub.
+        The local Git commands greatly minimise human errors and allow a more efficient developement of features as new branches may be implemented for each features.
+        The use of fonctions and magic method prootes code reusability and highly reduces the likelihood of bugs.
+        Reverting to a previous update is made possible by the .git file that traces all commits or versions.
 
 2. Instructions
 
