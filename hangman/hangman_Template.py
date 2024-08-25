@@ -76,12 +76,12 @@ class Hangman:
         # TODO 3: If the letter is in the word, the number of UNIQUE letters in the word that have not been guessed yet has to be reduced by 1
         # TODO 3: If the letter is not in the word, reduce the number of lives by 1
         # Be careful! A letter can contain the same letter more than once. TIP: Take a look at the index() method in the string class
-        if lower(letter) is in word_processed:
+        if letter.lower() is in word_processed:
             index = 0
-            while word_processed[index] != lowerletter:
+            while word_processed[index] != letter.lower():
                 index = index + 1
             word_processed[index] = "_"    
-            word_guessed[index] = letter 
+            word_guessed[index] = lower(letter)
             num_letters = num_letters - 1
         else:
             list_letters.append(letter)
