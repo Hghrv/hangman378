@@ -40,3 +40,18 @@ class Hangman:
                 list_of_guesses.append[guess]
 
     ask_for_input()
+
+#Sets the logic of the game
+def play_game(word_list):
+    num_lives = 5
+    game = Hangman(word_list, num_lives)
+    while True:
+        if  num_lives == 0:
+            print('You lost!')
+        elif num_letters > 0 :
+            word_guessed
+            ask_for_input()
+        else:
+            word_guessed
+            print('Congratulations. You won the game!')
+play_game(word_list)
