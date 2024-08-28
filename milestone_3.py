@@ -16,5 +16,5 @@ def ask_for_input():
             break
         else:
             print("Invalid letter. Please, enter a single alphabetical character.")
-    check_guess()
+    check_guess(guess)
 ask_for_input()
