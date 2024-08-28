@@ -16,7 +16,7 @@ class Hangman:
     def check_guess(guess):
         #Defines the behaviour after checking if the letter is in the word or not 
         guess.lower()
-        if guess is in word:
+        if guess in word:
             print(f"Good guess! {guess} is in the word.")
             for index in range(0, len(word)):
                 if word[index] == guess:

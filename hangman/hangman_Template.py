@@ -76,7 +76,7 @@ class Hangman:
         # TODO 3: If the letter is in the word, the number of UNIQUE letters in the word that have not been guessed yet has to be reduced by 1
         # TODO 3: If the letter is not in the word, reduce the number of lives by 1
         # Be careful! A letter can contain the same letter more than once. TIP: Take a look at the index() method in the string class
-        if letter.lower() is in word_processed:
+        if letter.lower() in word_processed:
             index = 0
             while word_processed[index] != letter.lower():
                 index = index + 1
@@ -106,7 +106,7 @@ class Hangman:
         while len(letter) != 1 or letter.isalpha() == False :
             print("Please, enter just one character")
             letter = input('Enter a single letter of your choice : _ ')
-        if letter is in list_letters:
+        if letter in list_letters:
             print(f"{letter} was already tried")
         else: check_letter(letter)
 

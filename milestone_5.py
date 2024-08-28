@@ -4,7 +4,7 @@ import random
 #Creates the Hangman class
 class Hangman:
     def __init__(self, word_list, num_lives=5):
-        #Initialises the attributes pf the class
+        #Initialises the attributes of the class
         self.word_list = word_list
         self.num_lives = num_lives
         word_list = ["lemon", "mango", "banana", "orange", "avocado"]
@@ -16,7 +16,7 @@ class Hangman:
     def check_guess(guess):
         #Defines the behaviour after checking if the letter is in the word or not 
         guess.lower()
-        if guess is in word:
+        if guess in word:
             print(f"Good guess! {guess} is in the word.")
             for index in range(0, len(word)):
                 if word[index] == guess:
