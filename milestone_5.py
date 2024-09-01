@@ -13,7 +13,7 @@ class Hangman:
         word_guessed = ['_' for element in range(0, num_letters)]
 
     #Defines the methods in the class: the check_guess and  ask_for_input functions
-    def check_guess(guess):
+    def check_guess(self, guess):
         #Defines the behaviour after checking if the letter is in the word or not 
         guess.lower()
         if guess in word:
@@ -27,7 +27,7 @@ class Hangman:
             print(f"Sorry, {guess} is not in the word.")
             print(f"You have {num_lives} lives left.")
 
-    def ask_for_input():
+    def ask_for_input(self):
     #Iteratively checks that the input is a valid letter
         while True:
             guess = input("Guess a single letter of your choice : _ ")

@@ -45,8 +45,8 @@ class Hangman:
         self.word_list = word_list
         self.num_lives = num_lives
 
-        word_list = ["lemon", "mango", "banana", "orange", "avocado"]
-        word = random.choice(word_list)
+        Hangman.word_list = ["lemon", "mango", "banana", "orange", "avocado"]
+        Hangman.word = random.choice(word_list)
         word_processed = word
         num_letters = len(word)
         word_guessed = ['_' for element in range(0, num_letters)]

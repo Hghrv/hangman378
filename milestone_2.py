@@ -2,7 +2,9 @@
 # Github repository created successfully
 # Github repo successfully cloned in local Git
 
-#Milestone 2. Creates the variables for the games
+
+#Milestone 2. Creates the variables for the game
+
 #Imports the module Random
 import random
 
@@ -10,7 +12,7 @@ import random
 word_list = ["Lemon", "Mango", "Banana", "Orange", "Avocado"]
 print(word_list)
 
-#Prints a fruit name randomly from the list
+#Prints a fruit name randomly from the list of fruits
 word = random.choice(word_list)
 print(word)
 
