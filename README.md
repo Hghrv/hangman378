@@ -51,7 +51,7 @@ Please refer to the following bulletpoints for correct usage of the modules in t
 
         After running the milestone_5.py file, the game should start.
 
-        You will be requested to guess a word letter by letter. Your only clues are: the number of unique letters in the word, and the total number of letters in the word. You have 5 attempts to guess the hidden word.
+        You will be requested to guess the name of a fruit letter by letter. Your only clues are: the length of the hidden word, and the positions of your correct guessed letters. You only have 5 attempts to guess the hidden word.
 
         Enjoy the game and have fun !
 

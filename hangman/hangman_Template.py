@@ -45,18 +45,18 @@ class Hangman:
         self.word_list = word_list
         self.num_lives = num_lives
 
-        Hangman.word_list = ["lemon", "mango", "banana", "orange", "avocado"]
-        Hangman.word = random.choice(word_list)
+        self.word_list = ["lemon", "mango", "banana", "orange", "avocado"]
+        self.word = random.choice(word_list)
         word_processed = word
-        num_letters = len(word)
-        word_guessed = ['_' for element in range(0, num_letters)]
-        list_letters = []
+        self.num_letters = len(set(self.word)
+        self.word_guessed = ['_' for element in range(0, num_letters)]
+        self.list_letters = []
         # TODO 2: Print two message upon initialization:
         # 1. "The mistery word has {num_letters} characters"
-        print(f"The mistery word has {num_letters} characters")
+        print(f"The mistery word has {self.num_letters} characters")
        
         # 2. {word_guessed}
-        print(f'{word_guessed}')
+        print(f'{self.word_guessed}')
         pass
 
     def check_letter(self, letter) -> None:

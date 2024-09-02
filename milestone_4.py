@@ -12,7 +12,7 @@ class Hangman:
         self.list_of_guesses = []
         self.word = random.choice(word_list)
         self.num_letters = len(set(self.word))
-        self.word_guessed = ['_' for element in range(0, self.num_letters)]
+        self.word_guessed = ['_' for element in range(0, len(self.word))]
       
 
     #Defines the methods in the class: the check_guess and  ask_for_input functions
@@ -20,16 +20,18 @@ class Hangman:
         #Defines the behaviour after checking if the letter is in the word or not 
         guess.lower()
         if guess in self.word:
-            print(f"Good guess! {guess} is in the word.")
             for index in range(0, len(self.word)):
                 if self.word[index] == guess:
                     self.word_guessed[index] = guess
             self.num_letters = self.num_letters - 1
+            print(f"Good guess! {guess} is in the word.")
+            
         else:
             self.num_lives = self.num_lives - 1
             print(f"Sorry, {guess} is not in the word.")
             print(f"You have {self.num_lives} lives left.")
-            
+        print(self.word_guessed)
+
     def ask_for_input(self):
     #Iteratively checks that the input is a valid letter
         while True:
@@ -44,6 +46,6 @@ class Hangman:
            
 
                
-    
-game = Hangman(Hangman.word_list)
-game.ask_for_input()
+if __name__ == '__main__':
+    game = Hangman(Hangman.word_list)
+    game.ask_for_input()
