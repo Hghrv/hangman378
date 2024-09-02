@@ -40,8 +40,17 @@ class Hangman:
     ask_letter()
         Asks the user for a letter.
     '''
+    word_list = ["lemon", "mango", "banana", "orange", "avocado"]
     def __init__(self, word_list, num_lives=5):
         # TODO 2: Initialize the attributes as indicated in the docstring
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.list_of_guesses = []
+        self.word = random.choice(word_list)
+        self.num_letters = len(set(self.word))
+        self.word_guessed = ['_' for element in range(0, len(self.word))]
+      
+        
         self.word_list = word_list
         self.num_lives = num_lives
 
