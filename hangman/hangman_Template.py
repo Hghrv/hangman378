@@ -40,32 +40,24 @@ class Hangman:
     ask_letter()
         Asks the user for a letter.
     '''
-    word_list = ["lemon", "mango", "banana", "orange", "avocado"]
+   
     def __init__(self, word_list, num_lives=5):
         # TODO 2: Initialize the attributes as indicated in the docstring
         self.word_list = word_list
         self.num_lives = num_lives
-        self.list_of_guesses = []
         self.word = random.choice(word_list)
         self.num_letters = len(set(self.word))
         self.word_guessed = ['_' for element in range(0, len(self.word))]
-      
-        
-        self.word_list = word_list
-        self.num_lives = num_lives
-
-        self.word_list = ["lemon", "mango", "banana", "orange", "avocado"]
-        self.word = random.choice(word_list)
-        word_processed = word
-        self.num_letters = len(set(self.word)
-        self.word_guessed = ['_' for element in range(0, num_letters)]
         self.list_letters = []
+
         # TODO 2: Print two message upon initialization:
         # 1. "The mistery word has {num_letters} characters"
-        print(f"The mistery word has {self.num_letters} characters")
+        num_letters = self.num_letters
+        print(f"The mistery word has {num_letters} characters")
        
         # 2. {word_guessed}
-        print(f'{self.word_guessed}')
+        word_guessed = self.word_guessed
+        print(f'{word_guessed}')
         pass
 
     def check_letter(self, letter) -> None:
@@ -85,16 +77,18 @@ class Hangman:
         # TODO 3: If the letter is in the word, the number of UNIQUE letters in the word that have not been guessed yet has to be reduced by 1
         # TODO 3: If the letter is not in the word, reduce the number of lives by 1
         # Be careful! A letter can contain the same letter more than once. TIP: Take a look at the index() method in the string class
-        if letter.lower() in word_processed:
-            index = 0
-            while word_processed[index] != letter.lower():
-                index = index + 1
-            word_processed[index] = "_"    
-            word_guessed[index] = lower(letter)
-            num_letters = num_letters - 1
+        letter.lower()
+        if letter in self.word:
+            self.num_letters = self.num_letters - 1
+            print(f"Good guess! {letter} is in the word.")
+            for index in range(0, len(self.word)):
+                if self.word[index] == letter:
+                    self.word_guessed[index] = letter
         else:
-            list_letters.append(letter)
-            num_lives = num_lives - 1
+            self.num_lives = self.num_lives - 1
+            print(f"Sorry, {letter} is not in the word.")
+            print(f"You have {self.num_lives} lives left.")
+        print(self.word_guessed)
 
         pass
 
@@ -110,14 +104,16 @@ class Hangman:
         # TODO 1: The letter has to comply with the following criteria: It has to be a single character. If it is not, print "Please, enter just one character"
         # TODO 2. It has to be a letter that has not been tried yet. Use the list_letters attribute to check this. If it has been tried, print "{letter} was already tried".
         # TODO 3: If the letter is valid, call the check_letter method
-
-        letter = input("Enter a single letter of your choice : _ ")
-        while len(letter) != 1 or letter.isalpha() == False :
-            print("Please, enter just one character")
-            letter = input('Enter a single letter of your choice : _ ')
-        if letter in list_letters:
-            print(f"{letter} was already tried")
-        else: check_letter(letter)
+        while True:
+            letter = input("Guess a single letter of your choice : _ ")
+            if len(letter) != 1 or letter.isalpha() == False:
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif letter in self.list_letters:
+                print("You already tried that letter!")
+            else:
+                self.check_letter(letter)
+                self.list_letters.append(letter)
+                break
 
         pass
 
@@ -132,14 +128,17 @@ def play_game(word_list):
     # If the user guesses the word, print "Congratulations! You won!"
     # If the user runs out of lives, print "You lost! The word was {word}"
     
-    if word_guessed == word:
-        print("Congratulations! You won!")
-    else:
-        if num_lives == 0:
-            print("You lost! The word was {word}")
+    while True:
+        if  game.num_lives == 0:
+            print('You lost!')
+            print(f'The hidden word was: {game.word}')
+            break
+        elif game.num_letters > 0 :
+            game.ask_letter()
         else:
-            while ("_" is in word_guessed and num_lives > 0) :
-                ask_letter()
+            print('Congratulations. You won the game!')
+            break
+
     pass
 
 if __name__ == '__main__':
