@@ -2,7 +2,6 @@
 import random
 
 #Creates the Hangman class
-
 class Hangman:
     word_list = ["lemon", "mango", "banana", "orange", "avocado"]
     def __init__(self, word_list, num_lives=5):
@@ -22,14 +21,13 @@ class Hangman:
         if guess in self.word:
             self.num_letters = self.num_letters - 1
             print(f"Good guess! {guess} is in the word.")
-            for index in range(0, len(self.word)):
-                if self.word[index] == guess:
-                    self.word_guessed[index] = guess
+            self.word_guessed = [ guess if self.word[index] == guess else self.word_guessed[index] for index in range(0, len(self.word)) ]
         else:
             self.num_lives = self.num_lives - 1
             print(f"Sorry, {guess} is not in the word.")
             print(f"You have {self.num_lives} lives left.")
         print(self.word_guessed)
+
 
     def ask_for_input(self):
     #Iteratively checks that the input is a valid letter
@@ -44,7 +42,6 @@ class Hangman:
                 self.list_of_guesses.append(guess)
                 break
            
-
 #Sets the logic of the game
 def play_game(word_list):
     num_lives = 5
@@ -59,4 +56,8 @@ def play_game(word_list):
         else:
             print('Congratulations. You won the game!')
             break
-play_game(Hangman.word_list)
+
+
+if __name__ == '__main__':
+    word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
+    play_game(word_list)
