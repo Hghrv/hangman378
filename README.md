@@ -55,10 +55,10 @@ Please refer to the following bulletpoints for correct usage of the modules in t
 
         The packages could be installed and unpacked in the following steps:
 
-        - Step 1: Under Git environment, clone the Hangman repository with the command: Git clone url
+        - Step 1: Under Git environment, clone the Hangman repository with the command:** git clone url**
         (Note: replace 'url' by the url link of this remote Hangman repository on GitHub).
 
-        - Step 2: In your bash or python terminal, run milestone_5.py with the command: milestone_5.py
+        - Step 2: In your bash or python terminal, run milestone_5.py with the command: **python milestone_5.py**
 
         You can also clone the repository to any supporting code editor such as VirtualStudioCode (with extensions) and run the milestone_5.py file from the local graphical unit interface.
         
